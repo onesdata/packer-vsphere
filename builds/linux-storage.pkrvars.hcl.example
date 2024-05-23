@@ -29,7 +29,7 @@ vm_disk_partitions = [
     size = 1024,
     format = {
       label  = "BOOTFS",
-      fstype = "xfs",
+      fstype = "ext4",
     },
     mount = {
       path    = "/boot",
@@ -38,7 +38,7 @@ vm_disk_partitions = [
     volume_group = "",
   },
   {
-    name = "rootvg"
+    name = "vgroot"
     size = -1,
     format = {
       label  = "",
@@ -48,19 +48,19 @@ vm_disk_partitions = [
       path    = "",
       options = "",
     },
-    volume_group = "roovg",
+    volume_group = "vgroot",
   },
 ]
 vm_disk_lvm = [
   {
-    name : "rootvg",
+    name : "vgroot",
     partitions : [
       {
-        name = "lv_root",
+        name = "lvroot",
         size = -1,
         format = {
           label  = "ROOTFS",
-          fstype = "xfs",
+          fstype = "ext4",
         },
         mount = {
           path    = "/",
