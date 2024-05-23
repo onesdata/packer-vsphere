@@ -38,7 +38,7 @@ vm_disk_partitions = [
     volume_group = "",
   },
   {
-    name = "sysvg"
+    name = "rootvg"
     size = -1,
     format = {
       label  = "",
@@ -48,28 +48,16 @@ vm_disk_partitions = [
       path    = "",
       options = "",
     },
-    volume_group = "sysvg",
+    volume_group = "roovg",
   },
 ]
 vm_disk_lvm = [
   {
-    name : "sysvg",
+    name : "rootvg",
     partitions : [
       {
-        name = "lv_swap",
-        size = 1024,
-        format = {
-          label  = "SWAPFS",
-          fstype = "swap",
-        },
-        mount = {
-          path    = "",
-          options = "",
-        },
-      },
-      {
         name = "lv_root",
-        size = 15360,
+        size = -1,
         format = {
           label  = "ROOTFS",
           fstype = "xfs",
@@ -77,78 +65,6 @@ vm_disk_lvm = [
         mount = {
           path    = "/",
           options = "",
-        },
-      },
-      {
-        name = "lv_home",
-        size = 4096,
-        format = {
-          label  = "HOMEFS",
-          fstype = "xfs",
-        },
-        mount = {
-          path    = "/home",
-          options = "nodev,nosuid",
-        },
-      },
-      {
-        name = "lv_opt",
-        size = 2048,
-        format = {
-          label  = "OPTFS",
-          fstype = "xfs",
-        },
-        mount = {
-          path    = "/opt",
-          options = "nodev",
-        },
-      },
-      {
-        name = "lv_tmp",
-        size = 4096,
-        format = {
-          label  = "TMPFS",
-          fstype = "xfs",
-        },
-        mount = {
-          path    = "/tmp",
-          options = "nodev,noexec,nosuid",
-        },
-      },
-      {
-        name = "lv_var",
-        size = 4096,
-        format = {
-          label  = "VARFS",
-          fstype = "xfs",
-        },
-        mount = {
-          path    = "/var",
-          options = "nodev",
-        },
-      },
-      {
-        name = "lv_log",
-        size = 4096,
-        format = {
-          label  = "LOGFS",
-          fstype = "xfs",
-        },
-        mount = {
-          path    = "/var/log",
-          options = "nodev,noexec,nosuid",
-        },
-      },
-      {
-        name = "lv_audit",
-        size = -1,
-        format = {
-          label  = "AUDITFS",
-          fstype = "xfs",
-        },
-        mount = {
-          path    = "/var/log/audit",
-          options = "nodev,noexec,nosuid",
         },
       },
     ],

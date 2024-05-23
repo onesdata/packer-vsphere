@@ -33,6 +33,8 @@
       key: "{{ ansible_key }}"
     - user: "{{ build_username }}"
       key: "{{ build_key }}"
+    - user: "{{ sisteamsadm_username }}"
+      key: "{{ sisteamsadm_key }}"
   no_log: true
 
 # Tasks for managing sudoers.d for the local users.
@@ -44,4 +46,4 @@
   loop:
     - "{{ build_username }}"
     - "{{ ansible_username }}"
-
+    - "{{ sisteamsadm_username }}"

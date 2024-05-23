@@ -25,8 +25,8 @@ common_ovf_export_enabled   = false
 common_ovf_export_overwrite = true
 
 // Removable Media Settings
-common_iso_datastore               = "sfo-w01-cl01-ds-nfs01"
-common_iso_content_library         = "sfo-w01-lib01"
+common_iso_datastore               = "honestic01"
+common_iso_content_library         = "ISO"
 common_iso_content_library_enabled = false
 
 // Boot and Provisioning Settings

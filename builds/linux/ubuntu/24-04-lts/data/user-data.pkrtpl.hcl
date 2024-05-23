@@ -16,7 +16,7 @@ autoinstall:
       - arches: [default]
         uri: http://ports.ubuntu.com/ubuntu-ports
   early-commands:
-    - sudo systemctl stop ssh
+    - sudo systemctl start ssh
   locale: ${vm_guest_os_language}
   keyboard:
     layout: ${vm_guest_os_keyboard}

@@ -8,17 +8,17 @@
 */
 
 // vSphere Credentials
-vsphere_endpoint            = "sfo-w01-vc01.example.com"
-vsphere_username            = "svc-packer-vsphere@example.com"
-vsphere_password            = "VMw@re123!"
-vsphere_insecure_connection = false
+vsphere_endpoint            = "10.58.45.190"
+vsphere_username            = "admin"
+vsphere_password            = "onx;sce0dkap"
+vsphere_insecure_connection = true
 
 // vSphere Settings
-vsphere_datacenter                     = "sfo-w01-dc01"
-vsphere_cluster                        = "sfo-w01-cl01"
+vsphere_datacenter                     = "Stackscale"
+vsphere_cluster                        = "cluster1"
 //vsphere_host                         = "sfo-w01-esx01"
-vsphere_datastore                      = "sfo-w01-cl01-ds-vsan01"
-vsphere_network                        = "sfo-w01-seg-dhcp"
-vsphere_folder                         = "sfo-w01-fd-templates"
+vsphere_datastore                      = "honestic01"
+vsphere_network                        = "net-10-212-0-0"
+vsphere_folder                         = "_Templates"
 //vsphere_resource_pool                = "sfo-w01-rp01"
 vsphere_set_host_for_datastore_uploads = false
