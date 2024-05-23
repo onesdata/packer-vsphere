@@ -16,7 +16,7 @@ vsphere_insecure_connection = true
 // vSphere Settings
 vsphere_datacenter                     = "Stackscale"
 vsphere_cluster                        = "cluster1"
-//vsphere_host                         = "sfo-w01-esx01"
+vsphere_host                         = "10.58.45.192"
 vsphere_datastore                      = "honestic01"
 vsphere_network                        = "net-10-212-0-0"
 vsphere_folder                         = "_Templates"
