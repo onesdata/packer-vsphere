@@ -204,25 +204,25 @@ source "vsphere-iso" "linux-ubuntu" {
 build {
   sources = ["source.vsphere-iso.linux-ubuntu"]
 
-  provisioner "ansible" {
-    user                   = var.build_username
-    galaxy_file            = "${path.cwd}/ansible/linux-requirements.yml"
-    galaxy_force_with_deps = true
-    playbook_file          = "${path.cwd}/ansible/linux-playbook.yml"
-    roles_path             = "${path.cwd}/ansible/roles"
-    ansible_env_vars = [
-      "ANSIBLE_CONFIG=${path.cwd}/ansible/ansible.cfg",
-      "ANSIBLE_GALAXY_IGNORE=true",
-    ]
-    extra_arguments = [
-      "--extra-vars", "display_skipped_hosts=false",
-      "--extra-vars", "build_username=${var.build_username}",
-      "--extra-vars", "build_key='${var.build_key}'",
-      "--extra-vars", "ansible_username=${var.ansible_username}",
-      "--extra-vars", "ansible_key='${var.ansible_key}'",
-      "--extra-vars", "enable_cloudinit=${var.vm_guest_os_cloudinit}",
-    ]
-  }
+  //  provisioner "ansible" {
+  //   user                   = var.build_username
+  //   galaxy_file            = "${path.cwd}/ansible/linux-requirements.yml"
+  //   galaxy_force_with_deps = true
+  //   playbook_file          = "${path.cwd}/ansible/linux-playbook.yml"
+  //   roles_path             = "${path.cwd}/ansible/roles"
+  //   ansible_env_vars = [
+  //     "ANSIBLE_CONFIG=${path.cwd}/ansible/ansible.cfg",
+  //     "ANSIBLE_GALAXY_IGNORE=true"
+  //   ]
+  //   extra_arguments = [
+  //     "--extra-vars", "display_skipped_hosts=false",
+  //     "--extra-vars", "build_username=${var.build_username}",
+  //     "--extra-vars", "build_key='${var.build_key}'",
+  //     "--extra-vars", "ansible_username=${var.ansible_username}",
+  //     "--extra-vars", "ansible_key='${var.ansible_key}'",
+  //     "--extra-vars", "enable_cloudinit=${var.vm_guest_os_cloudinit}",
+  //   ]
+  // }
 
   post-processor "manifest" {
     output     = local.manifest_output
