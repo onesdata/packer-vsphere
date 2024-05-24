@@ -211,7 +211,8 @@ build {
     playbook_file          = "${path.cwd}/ansible/linux-playbook.yml"
     roles_path             = "${path.cwd}/ansible/roles"
     ansible_env_vars = [
-      "ANSIBLE_CONFIG=${path.cwd}/ansible/ansible.cfg"
+      "ANSIBLE_CONFIG=${path.cwd}/ansible/ansible.cfg",
+      "ANSIBLE_GALAXY_IGNORE=true",
     ]
     extra_arguments = [
       "--extra-vars", "display_skipped_hosts=false",
