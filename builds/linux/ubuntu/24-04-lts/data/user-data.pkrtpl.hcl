@@ -37,7 +37,7 @@ ${network}
     - ${package}
 %{ endfor ~}
   user-data:
-    disable_root: false
+    disable_root: true
     timezone: ${vm_guest_os_timezone}
   late-commands:
     - sed -i -e 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /target/etc/ssh/sshd_config
