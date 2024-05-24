@@ -39,7 +39,7 @@ data "git-repository" "cwd" {}
 locals {
   build_by          = "Built by: HashiCorp Packer ${packer.version}"
   build_date        = formatdate("YYYY-MM-DD hh:mm ZZZ", timestamp())
-  build_version     = data.git-repository.cwd.head
+  build_version     = formatdate("YYYYMMDD", timestamp())
   build_description = "Version: ${local.build_version}\nBuilt on: ${local.build_date}\n${local.build_by}"
   iso_paths = {
     content_library = "${var.common_iso_content_library}/${var.iso_content_library_item}/${var.iso_file}",
