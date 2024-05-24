@@ -353,14 +353,12 @@ variable "build_username" {
   type        = string
   description = "The username to login to the guest operating system."
   sensitive   = true
-  default = "sistemasadm"
 }
 
 variable "build_password" {
   type        = string
   description = "The password to login to the guest operating system."
   sensitive   = true
-  default = "W3_4re_gr00t"
 }
 
 variable "build_password_encrypted" {
@@ -373,7 +371,6 @@ variable "build_key" {
   type        = string
   description = "The public key to login to the guest operating system."
   sensitive   = true
-  default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+ZHOSAAVhmyDp5jeYZRml2AhcWYXCuMYUIh90Z0GeonNdd7f977yhNPkiKswO2/qeXbiUjzVgu5+7gwhgO4FKJsGihm++7hvWzm8kvzYylq2yCHwn0MclTUpS2bLWPIE6BF+i3geomm/05278Df3HzbovqYzRhG1TQiLVV/ffrRSxD4bOCDyrxdD3mF6IkA5K/9JR73LtMFb1r3o63vBfLwZPh0ZQPW0T0Ts0kulUbisKFVhHb3qEVAMwOH/uS5vk8yLMIywLNcIcuI8TgjCHmJ7Oq+8Y/2SEGkRB/lACxUoaTKiOsudF+Hz4u6+A+ErlV8GAz2fXYUPOs7oUxYGiIfMjjnjh1Tbw442rwWozY2UxAEfjK9Opv7CkraHVGI+6tdeZFECGHmxIFqHEn4af9pQtdYvJ9LDo22vQXFeshQCWtq5A1UpB6K6h629aGE3nOb06XULHOwUIvgbsfkK9nAef/rM+rGG4o9jOQSpfKWWX3di9Y8dutwabuAukCG7GYtKU79NZV2/70r8o9oEt9Yd1G3UJGxNFhRDqe6mfREwrJ74SNhR3SBkPaGXr9yp9vqLZZmhhBzqaozY9Ip7XKdEfk8pye0/0YXevebbnIri8y7TcQSjsdpKr4L2GhhoVsHWMMpRoxUbOC7G1N25KndX3RjknvUVMUITEpwmL1Q== packer@onestic.com"
 }
 
 variable "communicator_proxy_host" {
