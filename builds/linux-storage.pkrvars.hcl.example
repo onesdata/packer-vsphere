@@ -38,6 +38,19 @@ vm_disk_partitions = [
     volume_group = "",
   },
   {
+    name = "swap"
+    size = 4096,
+    format = {
+      label  = "SWAP",
+      fstype = "swap",
+    },
+    mount = {
+      path    = "",
+      options = "",
+    },
+    volume_group = "",
+  },
+  {
     name = "vgroot"
     size = -1,
     format = {
