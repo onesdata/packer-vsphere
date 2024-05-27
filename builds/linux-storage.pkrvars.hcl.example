@@ -41,7 +41,7 @@ vm_disk_partitions = [
     name = "swap"
     size = 4096,
     format = {
-      label  = "SWAP",
+      label  = "SWAPFS",
       fstype = "swap",
     },
     mount = {
@@ -54,7 +54,7 @@ vm_disk_partitions = [
     name = "vgroot"
     size = -1,
     format = {
-      label  = "",
+      label  = "LVMFS",
       fstype = "",
     },
     mount = {
