@@ -224,6 +224,17 @@ build {
   //   ]
   // }
 
+  provisioner "shell" {
+    inline = [
+      #"sudo mkdir -p /etc/systemd/system/open-vm-tools.service.d",
+      #"echo '[Unit]\nAfter=dbus.service' | sudo tee /etc/systemd/system/open-vm-tools.service.d/after-dbus.conf]",
+      #"sudo echo 'disable_vmware_customization = false' >> /etc/cloud/cloud.cfg",
+      #"sudo rm -rf /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg"
+      #"sudo echo 'disable_vmware_customization = false' > /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg"
+      "sudo touch /etc/cloud/cloud-init.disabled"
+    ]
+  }
+
   post-processor "manifest" {
     output     = local.manifest_output
     strip_path = true
@@ -267,16 +278,5 @@ build {
         "packer_version" : packer.version,
       }
     }
-  }
-
-  provisioner "shell" {
-    inline = [
-      #"sudo mkdir -p /etc/systemd/system/open-vm-tools.service.d",
-      #"echo '[Unit]\nAfter=dbus.service' | sudo tee /etc/systemd/system/open-vm-tools.service.d/after-dbus.conf]",
-      #"sudo echo 'disable_vmware_customization = false' >> /etc/cloud/cloud.cfg",
-      #"sudo rm -rf /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg"
-      #"sudo echo 'disable_vmware_customization = false' > /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg"
-      "sudo touch /etc/cloud/cloud-init.disabled"
-    ]
   }
 }
